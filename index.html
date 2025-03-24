@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Fast Food Order</title>
+    <link rel="icon" type="image/x-icon" href="favicon-32x32.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>My Dream Fast Food Order</h1>
+        <form id="orderForm">
+            <label for="meal">Meal:</label>
+            <input type="text" id="meal" name="meal" required><br><br>
+
+            <label for="drink">Drink:</label>
+            <input type="text" id="drink" name="drink" required><br><br>
+
+            <label for="dessert">Dessert:</label>
+            <input type="text" id="dessert" name="dessert" required><br><br>
+
+            <button type="button" onclick="displayOrder()">Show My Order!</button>
+        </form>
+
+        <div id="orderDisplay" class="hidden">
+            <h2>Your Dream Order:</h2>
+            <p><strong>Meal:</strong> <span id="displayMeal"></span></p>
+            <p><strong>Drink:</strong> <span id="displayDrink"></span></p>
+            <p><strong>Dessert:</strong> <span id="displayDessert"></span></p>
+        </div>
+    </div>
+
+    <script>
+        function displayOrder() {
+            const meal = document.getElementById("meal").value;
+            const drink = document.getElementById("drink").value;
+            const dessert = document.getElementById("dessert").value;
+
+            document.getElementById("displayMeal").textContent = meal;
+            document.getElementById("displayDrink").textContent = drink;
+            document.getElementById("displayDessert").textContent = dessert;
+
+            document.getElementById("orderDisplay").classList.remove("hidden");
+        }
+    </script>
+</body>
+</html>
